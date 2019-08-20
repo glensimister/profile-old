@@ -34,6 +34,11 @@ top-nav a {
                 <div>
                     <button class="logout btn btn-red">LOGOUT</button>
                 </div>`;
+
+        $('.logout').on('click', function () {
+            user.leave();
+            window.location.replace("login.html");
+        })
     }
 }
 
