@@ -51,7 +51,7 @@
             $('.login').on('click', function() {
                 user.auth($('.username').val(), $('.password').val(), function(res) {
                     if (!res.err) {
-                        window.location.replace("/");
+                        window.location.replace("");
                     }
                 });
             });
