@@ -61,7 +61,7 @@
         var user = gun.user();
 
         if (sessionStorage.getItem('alias') == null) {
-            window.location.replace("/login.html");
+            window.location.replace("login.html");
         }
 
         gun.get('posts').once(function(res) {
