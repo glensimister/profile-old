@@ -1,0 +1,35 @@
+/***** page routing with sammy.js *****/
+
+function initializePageRouting() {
+
+    function loadHomePage() {
+        $('top-nav a.active').removeClass('active');
+        $(".content").load("pages/about.html", function(){
+            $('top-nav').find('a[href="#/about"]').addClass('active');
+        });
+    }
+
+    var app = $.sammy(function () {
+        this.get('#/', function () {
+            loadHomePage()
+        });
+        this.get('/index.html', function () {
+            loadHomePage()
+        });
+        this.get('/', function () {
+            loadHomePage()
+        });
+        this.get('#/:page', function () {
+            $('top-nav a.active').removeClass('active');
+            let page = `pages/${this.params['page']}.html`;
+            let active = this.params['page'];
+            $(".content").load(page, function () {
+                $('top-nav').find('a[href="#/' + active + '"]').addClass('active');
+            });
+        });
+    });
+
+    $(function () {
+        app.run()
+    });
+}

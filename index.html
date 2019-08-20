@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DEVOLUTION</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/buttons.css">
+
+    <!-- this needs to go in vendor -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/select2.min.css">
+    <link rel="stylesheet" href="css/vendor/animate.css">
+    <link rel="stylesheet" href="css/vendor/jquery-ui.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="grid-top">
+            <div class="logo">
+                <user-name></user-name>
+            </div>
+            <top-nav></top-nav>
+        </div>
+        <div class="grid fixed-top">
+            <div class="left">
+                <img src="img/user1-128x128.jpg" class="user-image-large" />
+                <side-menu></side-menu>
+            </div>
+            <div id="main">
+                <h1 class="page-title"></h1>
+                <div class="content">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------- Vendor -------------->
+    <script src="js/vendor/jquery-3.3.1.js"></script>
+    <script src="js/vendor/sammy-latest.min.js"></script>
+    <script src="js/vendor/select2.full.min.js"></script>
+    <script src="js/vendor/jquery-ui.js"></script>
+
+
+    <!---------- Global  -------------->
+    <script src="js/routing.js"></script>
+    <script src="js/index.js"></script>
+
+
+    <!---------- GUN -------------->
+    <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gun/sea.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gun/lib/webrtc.js"></script>
+    <script>
+        var gun = Gun();
+        var user = gun.user();
+
+        if (sessionStorage.getItem('alias') == null) {
+            window.location.replace("/login.html");
+        }
+
+        gun.get('posts').once(function(res) {
+            console.log(res);
+        });
+
+        $('.logout').on('click', function() {
+            user.leave();
+            window.location.replace("/login.html");
+        })
+
+    </script>
+
+    <!-------------------------------- Global Web components ---------------------------------->
+
+    <script type="module" src="js/components/sideMenu.js"></script>
+    <script type="module" src="js/components/userName.js"></script>
+    <script type="module" src="js/components/editAndDelete.js"></script>
+    <script type="module" src="js/components/topNav.js"></script>
+
+</body>
+
+</html>
