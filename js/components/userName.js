@@ -1,13 +1,7 @@
+import {readProfile} from '../api.js';
+
 class UserName extends HTMLElement {
     async connectedCallback() {
-
-        function getUserData() {
-            return new Promise(resolve => {
-                gun.get('user').once(function (res) {
-                    resolve(res);
-                });
-            });
-        }
 
         function splitString(name) {
             let res = name.split(" ");
@@ -16,7 +10,7 @@ class UserName extends HTMLElement {
             else return name;
         }
 
-        let res = await getUserData();
+        let res = await readProfile();
         let name = splitString(res.name);
         this.innerHTML = `
 <style>

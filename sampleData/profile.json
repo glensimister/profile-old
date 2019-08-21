@@ -1,5 +1,24 @@
 {
+    "name": "John Doe",
+    "jobTitle": "Programmer",
+    "picture": "img/user1-128x128.jpg",
+    "email": "john@gmail.com",
+    "phone": "(912) 555-4321",
+    "website": "http://johndoe.com",
+    "summary": "A summary of John Doe...",
+    "address": "2712 Broadway St",
+    "postalCode": "CA 94115",
+    "city": "San Francisco",
+    "countryCode": "US",
+    "region": "California",
+    "posts": [{
         "date": "10/08/2019",
         "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque arcu et nunc sodales, ut mollis mauris consectetur. Sed nec dui at leo congue consequat.",
         "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque arcu et nunc sodales, ut mollis mauris consectetur. Sed nec dui at leo congue consequat. Sed efficitur, erat vel lacinia malesuada, leo risus luctus elit, id commodo magna elit eget tellus. Morbi at ultrices elit. Aliquam interdum interdum orci, sit amet mattis lorem iaculis ac. In pharetra lorem ac arcu semper, sit amet dignissim dui consequat. Duis eget congue purus, sed elementum dui. Fusce quis lacus est. Sed sapien nisi, tincidunt vitae risus at, gravida finibus nisi. Pellentesque placerat eleifend vehicula. Praesent libero dolor, pellentesque vitae lectus at, commodo scelerisque risus. Fusce finibus erat vitae eros hendrerit, non rutrum quam faucibus. In aliquam enim quis urna ultrices efficitur."
+    },
+    {
+        "date": "09/08/2019",
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque arcu et nunc sodales, ut mollis mauris consectetur. Sed nec dui at leo congue consequat.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque arcu et nunc sodales, ut mollis mauris consectetur. Sed nec dui at leo congue consequat."
+    }]
 }

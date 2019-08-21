@@ -58,15 +58,19 @@
 
             $('.register').on('click', function() {
                 user.create($('.username').val(), $('.password').val(), function() {
-                    $.getJSON('sampleData/resume.json', function(res) {
-                        gun.get('user').put(res);
+                    const endpoint = 'https://www.jsonstore.io/4e7bbaac137475d331cec016651ebd4d1488e9e062fa674d04307d331447f0b3/users/1';
+                    $.getJSON('sampleData/profile.json', function(res) {
+                        $.ajax({
+                            type: 'PUT',
+                            url: endpoint,
+                            data: JSON.stringify(res),
+                            error: function(e) {
+                                console.log(e);
+                            },
+                            dataType: "json",
+                            contentType: "application/json"
+                        });
                     });
-                    
-                    $.getJSON('sampleData/posts.json', function(res) {
-                        console.log(res);
-                        gun.get('posts').put(res);
-                    });
-                    
                 });
             });
 

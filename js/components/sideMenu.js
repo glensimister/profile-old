@@ -1,16 +1,9 @@
+import {readProfile} from '../api.js';
+
 class SideMenu extends HTMLElement {
     async connectedCallback() {
 
-        function getUserData() {
-            return new Promise(resolve => {
-                gun.get('user').once(function (res) {
-                    resolve(res);
-                });
-            });
-        }
-
-
-        let res = await getUserData();
+        let res = await readProfile();
         this.innerHTML = `
 <style>
 .grid > side-menu {
