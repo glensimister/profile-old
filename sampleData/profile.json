@@ -29,12 +29,12 @@
     },
         {
             "date": "09/08/2019",
-            "body": "What's the incentive for people to host your profile?"
-    },
-        {
-            "date": "09/08/2019",
             "body": "For now, yes! However, the data in your profile is all public. Additionally, you can store this profile anywhere you want. As such it is unlikely that anyone hosting your data will try to sell it, as they would need thousands of records in order for it to profitable."
               },
+        {
+            "date": "09/08/2019",
+            "body": "What's the incentive for people to host your profile?"
+    },
         {
             "date": "09/08/2019",
             "body": "So, as mentioned, any money that goes into the application gets redistributed in the form of Social Credits. You can use these Social Credits to finance various things within the application. One of those things could be a hosting service. For example, I could run a server hosting the profile application (link above) and then setup a public service inside Devo. As an incentive for me to host other people profiles I can receive Social Credits in the form of a donation. Alternatively you could host your profile on a service like Netlify, AWS, and so on. "
