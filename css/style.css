@@ -100,13 +100,14 @@ side-menu {
 .left {
     background: #222d32;
     min-height: 600px;
+    padding: 20px 0;
 }
 
 .user-image-large {
     width: 128px;
     height: 128px;
     display: block;
-    margin: 20px auto;
+    margin: auto;
     border: 5px solid #848484;
     border-radius: 50%;
 }
