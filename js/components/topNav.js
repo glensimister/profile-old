@@ -34,7 +34,7 @@ display:none;
 display:none;
 }
 </style>
-                <div><a href="#/about">ABOUT</a></div>
+                <div><a href="">HOME</a></div>
                 <div><a class="hiddenItem" href="#/activity">ACTIVITY</a></div>
                 <div><a class="hiddenItem" href="#/photos">PHOTOS</a></div>
                 <div><a class="hiddenItem" href="#/friends">FRIENDS</a></div>
@@ -72,10 +72,12 @@ display:none;
         /* check to see if user is logged in on page load */
         if (sessionStorage.getItem('alias') != null) {
             $('.hiddenItem').show();
+            $('.hiddenItem').parent().css("border-right", "1px solid #eee");
             $('.top-nav-login').html("LOGOUT");
             $('.top-nav-login').addClass("loggedIn");
         } else {
             $('.hiddenItem').hide();
+            $('.hiddenItem').parent().css("border-right", "none");
             $('.top-nav-login').html("LOGIN");
             $('.top-nav-login').removeClass("loggedIn");
         }
@@ -93,6 +95,7 @@ display:none;
                 $('.top-nav-login').html("LOGIN");
                 $('.top-nav-login').removeClass("loggedIn");
                 $('.hiddenItem').hide();
+                $('.hiddenItem').parent().css("border-right", "none");
             }
         });
 
@@ -101,6 +104,7 @@ display:none;
             user.auth($('.username').val(), $('.password').val(), function (res) {
                 if (!res.err) {
                     $('.hiddenItem').show();
+                    $('.hiddenItem').parent().css("border-right", "1px solid #eee");
                     $('.top-nav-login').addClass("loggedIn");
                     $('.top-nav-login').html("LOGOUT");
                     $('#login').dialog('close');

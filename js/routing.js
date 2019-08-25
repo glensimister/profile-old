@@ -4,8 +4,8 @@ function initializePageRouting() {
 
     function loadHomePage() {
         $('top-nav a.active').removeClass('active');
-        $(".content").load("pages/about.html", function(){
-            $('top-nav').find('a[href="#/about"]').addClass('active');
+        $(".content").load("pages/home.html", function(){
+            $('top-nav').find('a[href=""]').addClass('active');
         });
     }
 

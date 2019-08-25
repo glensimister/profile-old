@@ -20,7 +20,7 @@ color:#dd4b39;
 side-menu p {padding:15px;}
 
 .sidebar-header {
-    background-color: #2a363c;
+    background-color: #3f4d54;
     text-transform:uppercase;
     font-size: 14px;
     text-align: center;

@@ -61,7 +61,7 @@ small {
 }*/
 
 #main {
-    padding: 0 30px;
+    padding: 30px;
     position: relative;
 }
 .edit-icon {
@@ -83,6 +83,7 @@ small {
 }
 .page-title {
     text-transform: uppercase;
+    margin:0;
 }
 a {
     color: #008d4c;
@@ -132,12 +133,6 @@ top-menu,
     -webkit-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
     -moz-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
     box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
-}
-.rateYo {
-    margin: 0 auto 20px auto;
-}
-.rateYoLeft {
-    margin-bottom: 20px;
 }
 
 /**** user image *****/
@@ -212,6 +207,11 @@ top-menu,
     color: #888;
     cursor: pointer;
 }
+
+#tabs section {
+    /*position:relative;*/
+}
+
 #tabs > input:checked + label {
     color: #555;
     border: 1px solid #eee;
@@ -236,11 +236,7 @@ top-menu,
 #tab12:checked ~ #content12 {
     display: block;
 }
-@media screen and (min-width: 650px) {
-    #tabs label i {
-        display: none;
-    }
-}
+
 @media screen and (max-width: 650px) {
     #tabs label span {
         font-size: 0;
