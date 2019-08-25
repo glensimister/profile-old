@@ -10,6 +10,7 @@ class SideMenu extends HTMLElement {
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
     padding: 0;
+    font-size: 13px;
 }
 
 side-menu i {
