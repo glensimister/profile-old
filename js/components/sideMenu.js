@@ -17,7 +17,10 @@ width:20px;
 color:#dd4b39;
 }
 
-side-menu p {padding:15px;}
+side-menu p {
+padding:0 20px;
+color:#b1b0b0;
+}
 
 .sidebar-header {
     background-color: #3f4d54;
@@ -50,7 +53,7 @@ side-menu ul li {
                     <li><i class="fa fa-phone"></i> <span>${res.phone}</span></li>
                     <li><i class="fa fa-external-link"></i> <span>${res.website}</span></li>
                 </ul><br />
-                    <p><b>Address:</b><br />${res.address}, ${res.postalCode}, ${res.city}, ${res.region}, ${res.countryCode}</p>`;
+                    <p>I currently work for a company called Lepide.com where I write articles about data security. In the limited spare time that I have I mess around with open-source projects, such as the one featured on this site.</p>`;
     }
 }
 
