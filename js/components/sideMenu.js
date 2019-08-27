@@ -10,11 +10,10 @@ class SideMenu extends HTMLElement {
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
     padding: 0;
-    font-size: 13px;
 }
 
 side-menu i {
-width:30px; 
+width:20px; 
 color:#dd4b39;
 }
 
@@ -28,6 +27,10 @@ side-menu p {padding:15px;}
     color: #c5c5c5;
     margin:20px 0;
     padding:10px;
+}
+
+side-menu {
+font-size: 13px;
 }
 
 @media screen and (min-width: 600px) {}

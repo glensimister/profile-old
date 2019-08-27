@@ -13,7 +13,7 @@
 body {
     font-family: 'OpenSans-Regular', sans-serif;
     font-weight: 400;
-    color: #848484;
+    color: #222d32;
     line-height: 1.5;
     font-size: 14px;
 }
@@ -47,6 +47,23 @@ small {
 }
 .pull-right {
     float: right;
+}
+#main ul,
+#main ol {
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 15px 30px;
+    -webkit-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
+    -moz-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
+    box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
+}
+
+pre {
+    margin: 20px 0;
+    background:  #eee;
+    border-radius: 4px;
+    padding: 0 20px;
 }
 
 /*
@@ -83,7 +100,7 @@ small {
 }
 .page-title {
     text-transform: uppercase;
-    margin:0;
+    margin: 0;
 }
 a {
     color: #008d4c;
@@ -103,7 +120,6 @@ side-menu {
     min-height: 600px;
     padding: 20px 0;
 }
-
 .user-image-large {
     width: 128px;
     height: 128px;
@@ -126,8 +142,8 @@ top-menu,
 }
 .box > div {
     padding: 30px;
-    margin-bottom:20px;
-    position:relative;
+    margin-bottom: 20px;
+    position: relative;
     border: 1px solid #eee;
     border-radius: 3px;
     -webkit-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
@@ -207,11 +223,9 @@ top-menu,
     color: #888;
     cursor: pointer;
 }
-
 #tabs section {
     /*position:relative;*/
 }
-
 #tabs > input:checked + label {
     color: #555;
     border: 1px solid #eee;
@@ -236,7 +250,6 @@ top-menu,
 #tab12:checked ~ #content12 {
     display: block;
 }
-
 @media screen and (max-width: 650px) {
     #tabs label span {
         font-size: 0;
