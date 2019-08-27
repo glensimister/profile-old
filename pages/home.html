@@ -41,8 +41,8 @@
         <p>What about credentials? The hosting providers will not have access to a user's credentials as they will be managed using GunDB's built-in authentication protocol. When signing-up, users will be asked to specify X number of security questions and answers, which will be used to generate their password. If the user forgets their password, they simply answer the questions to log back in. </p>
 
         <h2>Devo - social media application</h2>
-        <p>Devo is decentralized, as it works without a centralized server. Ideally, I would like users to be able to login to Devo using the same credentials as the public profile, which will enable them to write, edit and delete data on their profile. </p>
-        <p>GunDB will not store a user's profile data. Instead it stores a reference to data on the user's profile. GunDB uses localstorage for storing the data, which is limited in size. That said, users only store the data that they are a subscribed too, and there are adapters that can increase the size of the storage. However, given that Facebook stores about 500+ terabytes of data each day, we still need to preserve as much space as possible. So... </p>
+        <p>Devo is decentralized, as it works without a centralized server. Ideally, I would like users to be able to login to Devo using the same credentials as the public profile, which will enable them to write, edit and delete data on their profile.</p>
+        <p>GunDB will not store a user's posts/comments/photos etc. Instead it stores a reference to this data on the user's public profile. GunDB uses localstorage for storing the data, which is limited in size. That said, users only store the data that they are a subscribed too, and there are adapters that can increase the size of the storage. However, given that Facebook stores about 500+ terabytes of data each day, we still need to preserve as much space as possible. So... </p>
         <p>Let's say that I comment on a post in Devo. The comment is sent to my profile, and a reference to the post is stored in GunDB. Below is a cut-down version of how the data will be stored in Gun. </p>
         
         <pre><code>
