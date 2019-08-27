@@ -25,7 +25,7 @@ color:#b1b0b0;
 .sidebar-header {
     background-color: #3f4d54;
     text-transform:uppercase;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
     color: #c5c5c5;
     margin:20px 0;
