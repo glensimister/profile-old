@@ -4,8 +4,8 @@
 
     <input id="tab2" type="radio" name="tabs">
     <label for="tab2"><span>TECHNICAL</span></label>
-    
-        <input id="tab3" type="radio" name="tabs">
+
+    <input id="tab3" type="radio" name="tabs">
     <label for="tab3"><span>VIDEOS</span></label>
 
     <input id="tab6" type="radio" name="tabs">
@@ -44,7 +44,7 @@
         <p>Devo is decentralized, as it works without a centralized server. Ideally, I would like users to be able to login to Devo using the same credentials as the public profile, which will enable them to write, edit and delete data on their profile.</p>
         <p>GunDB will not store a user's posts/comments/photos etc. Instead it stores a reference to this data on the user's public profile. GunDB uses localstorage for storing the data, which is limited in size. That said, users only store the data that they are a subscribed too, and there are adapters that can increase the size of the storage. However, given that Facebook stores about 500+ terabytes of data each day, we still need to preserve as much space as possible. So... </p>
         <p>Let's say that I comment on a post in Devo. The comment is sent to my profile, and a reference to the post is stored in GunDB. Below is a cut-down version of how the data will be stored in Gun. </p>
-        
+
         <pre><code>
 /*** posts ***/
 {
@@ -64,11 +64,11 @@ publicKey: the URL of the users profile, which can updated if they move their pr
 
         <h2>Browser extension (toolbar)</h2>
         <p>The browser extension is a toolbar that can be used beyond the confines of the application. It will allow users to like, dislike, flag, comment, donate crypto, view the author of the content, and view the score of the current page. As it stands the browser extension is called &ldquo;GiveMeCredit!&rdquo;, although that may be subject to change. GiveMeCredit! was where the original idea for Devo came from. You can view a demo of the extension at the bottom of Devo. As with Devo, the browser extension will write data to the user's profile. </p>
-        
+
         <h2>Credits and financial transactions &ndash; the (even more) tricky bit</h2>
         <p>Initially, Devo will probably use Ethereum. I've been very hesitant to use Ethereum due to concerns about scalability, however, Ethereum 2.0 (Serenity) is said to be <a href="https://cointelegraph.com/news/joseph-lubin-on-ethereum-20-eth-to-become-1-000-times-more-scalable-within-24-months">1,000 times more scalable</a>, and it's still probably the most production-ready Smart Contract platform available. Not only that but there are a number of dapps/currencies that already exist that could be useful for Devo, some of which include:-</p>
         <ul>
-        <li><a href="">Bancor protocol</a> : Convert any token to another, without requiring a second party to exchange with</li>
+            <li><a href="">Bancor protocol</a> : Convert any token to another, without requiring a second party to exchange with</li>
             <li><a href="">Basic attention token (BAT)</a> : Ethereum token that powers Brave browser's digital advertising platform</li>
             <li><a href="">Crypto20</a> : The first tokenized Crypto Index fund (useful for price stability)</li>
             <li><a href="">Cryptolotto</a> : A transparent lottery powered by Ethereum smart contracts</li>
@@ -78,7 +78,7 @@ publicKey: the URL of the users profile, which can updated if they move their pr
         <p>It should also be noted that the developers of GunDB (including one of Bitcoin's first developers) are currently developing their own cryptocurrency called AXE, which uses a &rdquo;proof-of-propagation&rdquo; consensus algorithm. </p>
         <p>As mentioned in the non-technical guide, any revenue that goes into Devo is redistributed in the form of Social Credits. These Social Credits can be used to finance various activities on the platform.</p>
 
-        <h2>How it works...</h2>
+        <h3>How it works...</h3>
 
         <ul>
             <li>Each user will be required to create an account on Ethereum and pay small amount of ETH into a Smart Contract. The smart contract will create a user account which contains a number of additional fields. e.g. socialCredits, healthCredits, educationCredits, and a few others which I won't mention right now. </li>
@@ -101,6 +101,27 @@ publicKey: the URL of the users profile, which can updated if they move their pr
         <h2>Health Credits</h2>
         <p>As mentioned, normally a user would donate their social credits to a service. When a user transfers their social credits to health credits, the social credits are &ldquo;sent back&rdquo; to the Smart Contract, and the contract updates the healthCredits field in the Blockchain. However, with health credits, there is a limit to the number of credits they can receive. I haven't yet decided how these limits would be set. Smart contracts are not typically able to access data from external sources. However, with <a href="http://provable.xyz/">Provable</a>, &ldquo;Smart contracts can directly access data from Web sites or APIs&rdquo;. This will enable us to dynamically adjust these limits through some form of democratic process. </p>
         <p>In order for health credits to be redeemed we also need a list of healthcare service providers. This list will probably be done off the blockchain, although the service provider ratings will likely be stored on the blockchain. Service providers will need to register an account, just like ordinary users, and there will be a certain criteria that needs to be met in order for them to receive health credits. Education credits work in a very similar way so I'll omit this section for now. </p>
+
+        <h2>Land Value Rent (LVR) – an unofficial Land Value Tax (LVT)</h2>
+        <p>Let's assume that we have some revenue going into the application. We now have some Social Credits. We can use those credits to collectively buy land – perhaps using FieldCoin.</p>
+
+        <h2>What is FieldCoin? </h2>
+
+        <p>FieldCoin Ltd is the “first blockchain based land marketplace”. I'm not sure how this applies to non-UK citizens but according to their <a target="_blank" href="https://www.fieldcoin.io/faq-fieldcoin.html">documentation</a>, they use the current legal framework combined with the blockchain to enable faster and cheaper transactions. There are 2 levels of ownership: </p>
+        <ul>
+            <li><b>Offchain</b> : to comply with national regulations</li>
+            <li><b>Onchain</b> : creates a unique ERC20 token representing a specific property</li>
+        </ul>
+        <p>Fieldcoin Ltd or a third party company DAO (decentralized autonomous organization) owns the property titles recorded in the national land registry. In this case, Devo would be the DAO. Once the land belongs to Devo, it becomes locked and cannot be re-sold – only rented. One or more users can register some or all of that land, and pay a LVR back into the application.</p>
+
+        <h2>How much rent will they pay? </h2>
+        <p>This is where things get a bit fudgy. Let's look at house prices for example...</p>
+        <p>According to the following <a target="_blank" href="https://smartasset.com/mortgage/how-much-you-should-charge-for-rent">article</a>, “Typically, the rents that landlords charge fall between 0.8% and 1.1% of the home’s value”. For the sake of simplicity, let's call it 1%. Using this as an example, if we purchased a plot of land for £20,000, the renter would pay £200 per month. However, because there is no seller, we would need to automatically adjust this amount according to inflation/deflation. In other words, we would need an index (or tracker) that tracks the value of FieldCoin's ERC20 token (called LANDS). If the value goes up by X%, the LVR goes up by X%, and vice-versa. There might be a better way to work it out, but for now that's what I've got.</p>
+
+        <h2>What about planning permission?</h2>
+        <p>Obviously if you are not based in the UK, the rules will be different. Here in the UK it is notoriously difficult to get planning permission. If we can do it, the chances are you can too. Here in the UK we have a scheme called <a href="https://mycommunity.org.uk/resources/understanding-the-community-right-to-build/" target="_blank">Community Right to Build</a>. According to the website: “This Act was conceived to fulfil the Government’s stated commitment to decentralising control over public services, assets and planning from central government to local government and from local government to local communities. These give communities explicit powers in the areas of local assets, local services, planning and development”.</p>
+        <p>One of the main advantages of collectively buying land is that even in the event that we are not allowed to use for our intended purpose, the risk is shared, and we can still find a use for it.</p>
+
         <p>TO BE CONTINUED...</p>
     </section>
 
@@ -108,7 +129,7 @@ publicKey: the URL of the users profile, which can updated if they move their pr
         <h1>VIDEOS</h1>
         <p>Please note that these videos are a bit dated now. I am no longer building Devo on the SafeNetwork, although I may go back to it at some point in the future.</p>
         <h3>Short Demo</h3>
-<iframe style="width:100%; height:400px;" src="https://www.youtube.com/embed/Hqilf2TxIKc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe style="width:100%; height:400px;" src="https://www.youtube.com/embed/Hqilf2TxIKc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h3>Long Demo</h3>
         <iframe style="width:100%; height:400px;" src="https://www.youtube.com/embed/v83KDHyyNjg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
