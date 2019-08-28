@@ -1,3 +1,21 @@
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+
+</script>
+
 <div id="tabs">
     <input id="tab1" type="radio" name="tabs" checked>
     <label for="tab1"><span>NON-TECHNICAL</span></label>
@@ -25,42 +43,46 @@
     </section>
 
     <section id="content2">
-        <h1>Technical Explaination</h1>
-        <p>This document is not designed for regular users of the application, but for developers who are interested in contributing. That's said, each section has a summary, which regular users might be able to make sense of. This project is very much under construction. After giving it much thought I decided not to use a JS framework, but instead stick to web standards. The current prototype relies on Jquery, however, I plan to replace Jquery with vanilla Javascript to make the web components more encapsulated. In terms of the core codebase, I would like to use the <a href="https://micro-frontends.org/">micro-frontend</a> methodology. Additionally, Devo will receive updates and will be extendable through plug-ins. </p>
-        <p>The application will be decentralized. However, due to various technological limitations, it will most likely start off with some degree of centralization. It is important to note that the technologies that I plan to use will be subject to change, as new and improved technologies enter the game. Below are some ideas about how the platform will work, initially. </p>
-        <p>The application will broken into three main components. </p>
-        <ol>
-            <li>Public profile/resume (semi-centralized)</li>
-            <li>Devo - Social media application (decentralized)</li>
-            <li>Browser extension (semi-decentralized)</li>
-        </ol>
+        <h1>Technical Specification</h1>
+        <button class="accordion">Introduction</button>
+        <div class="panel">
+            <p>This document is intended for developers who are interested in contributing. This project is very much under construction. I'm not using any JavaScript frameworks - only web standards. The current prototype relies on JQuery, however, I plan to replace JQuery with vanilla Javascript to make the web components more encapsulated. In terms of the core codebase, I would like to use the <a href="https://micro-frontends.org/">micro-frontend</a> methodology. Additionally, Devo will receive updates and will be extendable through plug-ins. The application will be decentralized. However, due to various technological limitations, it will most likely start off with some degree of centralization. It is important to note that the technologies that I plan to use will be subject to change, as new and improved technologies enter the game. The application will broken into three main components:-</p>
+            <ol>
+                <li>Public profile/resume (semi-centralized)</li>
+                <li>Devo - Social media application (decentralized)</li>
+                <li>Browser extension (semi-decentralized)</li>
+            </ol>
+        </div>
 
-        <h2>Public profile</h2>
-        <h3>Summary</h3>
-        <ul>
-            <li>Profiles will be hosted on a server</li>
-            <li>Users can choose where to host their profile</li>
-            <li>Passwords will be generated using security questions, which the user can specify</li>
-            <li>Passwords will not be visible to the host</li>
-        </ul>
+        <button class="accordion">Public Profile</button>
+        <div class="panel">
+            <h3>Summary</h3>
+            <ul>
+                <li>Profiles will be hosted on a server</li>
+                <li>Users can choose where to host their profile</li>
+                <li>Passwords will be generated using security questions, which the user can specify</li>
+                <li>Passwords will not be visible to the host</li>
+            </ul>
 
-        <p>Initially, the public profile will be built on <a href="https://gun.eco/">GunDB</a>. GunDB is a lightweight, P2P graph database engine written in Javascript. GunDB works both in the browser (using localstorage) or on a server (using NodeJS). The public profile itself will be hosted on a server, while Devo will use localstorage. Of course, in order for the platform to be fully decentralized, we would need some sort of decentralized storage platform that is able to host dynamic web applications. There are decentralized storage solutions, such as IPFS, however, to the best of my knowledge, IPFS can only host static content. Additionally, with IPFS it's not possible to delete data. I want to ensure that users have as much control over their data as possible, which includes the right to remove content as and when they choose. With GunDB you at least have the option to overwrite your data with NULL, which is good enough for me.</p>
-        <p>With this in mind, we will need to rely on free hosting providers (for now at least), which is not an ideal solution, but a trade off. The public profile is &ldquo;semi-centralized&rdquo; because it will be hosted on a &ldquo;centralized server&rdquo;, but users can choose which server they want to host it. It thus follows a similar principal to <a href="https://solid.inrupt.com/">Solid (Social Linked Data)</a> - a project that is being developed by Tim Berners-Lee. There may be ways of automating the transfer of profiles between servers. Naturally, there are those who want less censorship, and those who want more. Storing the profiles on a centralized server provides a compromise. For example, if a user of the application is hosting illicit material, other users could report them to the hosting provider, or even report the hosting provider to the authorities. However, assuming the user hosting the data doesn't end up in jail, they could simply move their data to another server, and update their URL within Devo. In some ways I would prefer this option as it's more democratic. Not only that but I wouldn't want to derail the project by getting into trouble with the authorities.</p>
-        <p>What about credentials? The hosting providers will not have access to a user's credentials as they will be managed using GunDB's built-in authentication protocol. When signing-up, users will be asked to specify X number of security questions and answers, which will be used to generate their password. If the user forgets their password, they simply answer the questions to log back in. </p>
+            <p>Initially, the public profile will be built on <a href="https://gun.eco/">GunDB</a>. GunDB is a lightweight, P2P graph database engine written in Javascript. GunDB works both in the browser (using localstorage) or on a server (using NodeJS). The public profile itself will be hosted on a server, while Devo will use localstorage. Of course, in order for the platform to be fully decentralized, we would need some sort of decentralized storage platform that is able to host dynamic web applications. There are decentralized storage solutions, such as IPFS, however, to the best of my knowledge, IPFS can only host static content. Additionally, with IPFS it's not possible to delete data. I want to ensure that users have as much control over their data as possible, which includes the right to remove content as and when they choose. With GunDB you at least have the option to overwrite your data with NULL, which is good enough for me.</p>
+            <p>With this in mind, we will need to rely on free hosting providers (for now at least), which is not an ideal solution, but a trade off. The public profile is &ldquo;semi-centralized&rdquo; because it will be hosted on a &ldquo;centralized server&rdquo;, but users can choose which server they want to host it. It thus follows a similar principal to <a href="https://solid.inrupt.com/">Solid (Social Linked Data)</a> - a project that is being developed by Tim Berners-Lee. There may be ways of automating the transfer of profiles between servers. Naturally, there are those who want less censorship, and those who want more. Storing the profiles on a centralized server provides a compromise. For example, if a user of the application is hosting illicit material, other users could report them to the hosting provider, or even report the hosting provider to the authorities. However, assuming the user hosting the data doesn't end up in jail, they could simply move their data to another server, and update their URL within Devo. In some ways I would prefer this option as it's more democratic. Not only that but I wouldn't want to derail the project by getting into trouble with the authorities.</p>
+            <p>What about credentials? The hosting providers will not have access to a user's credentials as they will be managed using GunDB's built-in authentication protocol. When signing-up, users will be asked to specify X number of security questions and answers, which will be used to generate their password. If the user forgets their password, they simply answer the questions to log back in. </p>
+        </div>
 
-        <h2>Devo - social media application</h2>
-        <h3>Summary</h3>
-        <ul>
-            <li>Works without a centralized server</li>
-            <li>Can login using the public profile</li>
-            <li>Devo doesn't store users' data, but refereces to the data on the server hosting the profile</li>
-        </ul>
+        <button class="accordion">Devo - social media application</button>
+        <div class="panel">
+            <h3>Summary</h3>
+            <ul>
+                <li>Works without a centralized server</li>
+                <li>Can login using the public profile</li>
+                <li>Devo doesn't store users' data, but refereces to the data on the server hosting the profile</li>
+            </ul>
 
-        <p>Devo is decentralized, as it works without a centralized server. Ideally, I would like users to be able to login to Devo using the same credentials as the public profile, which will enable them to write, edit and delete data on their profile.</p>
-        <p>GunDB will not store a user's posts/comments/photos etc. Instead it stores a reference to this data on the user's public profile. GunDB uses localstorage for storing the data, which is limited in size. That said, users only store the data that they are a subscribed too, and there are adapters that can increase the size of the storage. However, given that Facebook stores about 500+ terabytes of data each day, we still need to preserve as much space as possible. So... </p>
-        <p>Let's say that I comment on a post in Devo. The comment is sent to my profile, and a reference to the post is stored in GunDB. Below is a cut-down version of how the data will be stored in Gun. </p>
+            <p>Devo is decentralized, as it works without a centralized server. Ideally, I would like users to be able to login to Devo using the same credentials as the public profile, which will enable them to write, edit and delete data on their profile.</p>
+            <p>GunDB will not store a user's posts/comments/photos etc. Instead it stores a reference to this data on the user's public profile. GunDB uses localstorage for storing the data, which is limited in size. That said, users only store the data that they are a subscribed too, and there are adapters that can increase the size of the storage. However, given that Facebook stores about 500+ terabytes of data each day, we still need to preserve as much space as possible. So... </p>
+            <p>Let's say that I comment on a post in Devo. The comment is sent to my profile, and a reference to the post is stored in GunDB. Below is a cut-down version of how the data will be stored in Gun. </p>
 
-        <pre><code>
+            <pre><code>
 /*** posts ***/
 {
     postID: the poster's post ID
@@ -75,100 +97,109 @@
 /*** users ****/
 publicKey: the URL of the users profile, which can updated if they move their profile
         </code></pre>
-        <p>When the original poster tries to retrieve the post it will lookup the public key in the users table, find the URL of their profile, and then fetch the post according to the ID. Likewise, it will lookup the comments, find the URL of the commenter's public key and fetch the post according to the post ID. The goal is to only store the data you absolutely must store. There will be some data that may be best stored in Gun. For example, a private chat between two people might be better stored in Gun as sending a POST request to a server each time you send a message would be inefficient. </p>
+            <p>When the original poster tries to retrieve the post it will lookup the public key in the users table, find the URL of their profile, and then fetch the post according to the ID. Likewise, it will lookup the comments, find the URL of the commenter's public key and fetch the post according to the post ID. The goal is to only store the data you absolutely must store. There will be some data that may be best stored in Gun. For example, a private chat between two people might be better stored in Gun as sending a POST request to a server each time you send a message would be inefficient. </p>
 
-        <h2>Browser extension (toolbar)</h2>
-        <p>The browser extension is a toolbar that can be used beyond the confines of the application. It will allow users to like, dislike, flag, comment, donate crypto, view the author of the content, and view the score of the current page. As it stands the browser extension is called &ldquo;GiveMeCredit!&rdquo;, although that may be subject to change. GiveMeCredit! was where the original idea for Devo came from. You can view a demo of the extension at the bottom of Devo. As with Devo, the browser extension will write data to the user's profile. </p>
+            <h2>Browser extension (toolbar)</h2>
+            <p>The browser extension is a toolbar that can be used beyond the confines of the application. It will allow users to like, dislike, flag, comment, donate crypto, view the author of the content, and view the score of the current page. As it stands the browser extension is called &ldquo;GiveMeCredit!&rdquo;, although that may be subject to change. GiveMeCredit! was where the original idea for Devo came from. You can view a demo of the extension at the bottom of Devo. As with Devo, the browser extension will write data to the user's profile. </p>
+        </div>
 
-        <h2>Credits and financial transactions &ndash; the (even more) tricky bit</h2>
+        <button class="accordion">Social Credits and financial transactions</button>
+        <div class="panel">
+            <h3>Summary</h3>
+            <ul>
+                <li>Uses Ethereum</li>
+                <li>Users register an account with a Smart Contract</li>
+                <li>Users elect officials</li>
+                <li>Users pay &ldquo;tax&rdquo; into Smart Contract</li>
+                <li>Social Credits are distributed to each user</li>
+                <li>Users donate Social Credits to officials</li>
+                <li>Smart contract verifies and pays official</li>
+                <li>Smart contract updates user's Social Credits</li>
+            </ul>
 
-        <h3>Summary</h3>
-        <ul>
-            <li>Uses Ethereum</li>
-            <li>Users register an account with a Smart Contract</li>
-            <li>Users elect officials</li>
-            <li>Users pay &ldquo;tax&rdquo; into Smart Contract</li>
-            <li>Social Credits are distributed to each user</li>
-            <li>Users donate Social Credits to officials</li>
-            <li>Smart contract verifies and pays official</li>
-            <li>Smart contract updates user's Social Credits</li>
-        </ul>
+            <p>Initially, Devo will probably use Ethereum. I've been very hesitant to use Ethereum due to concerns about scalability, however, Ethereum 2.0 (Serenity) is said to be <a href="https://cointelegraph.com/news/joseph-lubin-on-ethereum-20-eth-to-become-1-000-times-more-scalable-within-24-months">1,000 times more scalable</a>, and it's still probably the most production-ready Smart Contract platform available. Not only that but there are a number of dapps/currencies that already exist that could be useful for Devo, some of which include:-</p>
+            <ul>
+                <li><a href="">Bancor protocol</a> : Convert any token to another, without requiring a second party to exchange with</li>
+                <li><a href="">Basic attention token (BAT)</a> : Ethereum token that powers Brave browser's digital advertising platform</li>
+                <li><a href="">Crypto20</a> : The first tokenized Crypto Index fund (useful for price stability)</li>
+                <li><a href="">Cryptolotto</a> : A transparent lottery powered by Ethereum smart contracts</li>
+                <li><a href="">FieldCoin</a> : A blockchain based land marketplace</li>
+            </ul>
+            <p>Although not related to Ethereum, I'm also interested in ULEX &ndash; an <a href="https://instituteforcompgov.org/ulex">open source legal system</a>. </p>
+            <p>It should also be noted that the developers of GunDB (including one of Bitcoin's first developers) are currently developing their own cryptocurrency called AXE, which uses a &rdquo;proof-of-propagation&rdquo; consensus algorithm. </p>
+            <p>As mentioned in the non-technical guide, any revenue that goes into Devo is redistributed in the form of Social Credits. These Social Credits can be used to finance various activities on the platform.</p>
 
-        <p>Initially, Devo will probably use Ethereum. I've been very hesitant to use Ethereum due to concerns about scalability, however, Ethereum 2.0 (Serenity) is said to be <a href="https://cointelegraph.com/news/joseph-lubin-on-ethereum-20-eth-to-become-1-000-times-more-scalable-within-24-months">1,000 times more scalable</a>, and it's still probably the most production-ready Smart Contract platform available. Not only that but there are a number of dapps/currencies that already exist that could be useful for Devo, some of which include:-</p>
-        <ul>
-            <li><a href="">Bancor protocol</a> : Convert any token to another, without requiring a second party to exchange with</li>
-            <li><a href="">Basic attention token (BAT)</a> : Ethereum token that powers Brave browser's digital advertising platform</li>
-            <li><a href="">Crypto20</a> : The first tokenized Crypto Index fund (useful for price stability)</li>
-            <li><a href="">Cryptolotto</a> : A transparent lottery powered by Ethereum smart contracts</li>
-            <li><a href="">FieldCoin</a> : A blockchain based land marketplace</li>
-        </ul>
-        <p>Although not related to Ethereum, I'm also interested in ULEX &ndash; an <a href="https://instituteforcompgov.org/ulex">open source legal system</a>. </p>
-        <p>It should also be noted that the developers of GunDB (including one of Bitcoin's first developers) are currently developing their own cryptocurrency called AXE, which uses a &rdquo;proof-of-propagation&rdquo; consensus algorithm. </p>
-        <p>As mentioned in the non-technical guide, any revenue that goes into Devo is redistributed in the form of Social Credits. These Social Credits can be used to finance various activities on the platform.</p>
+            <h3>How it works...</h3>
 
-        <h3>How it works...</h3>
+            <ul>
+                <li>Each user will be required to create an account on Ethereum and pay small amount of ETH into a Smart Contract. The smart contract will create a user account which contains a number of additional fields. e.g. socialCredits, healthCredits, educationCredits, and a few others which I won't mention right now. </li>
+                <li>Voting will also be done on the Ethereum Blockchain. There are several <a href="https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2">voting tutorials</a></li>
+                <li>Any &ldquo;tax&rdquo; revenue (lottery, ads, LVT) that is paid into the application will be paid into the smart contract. We could use the Bancor protocol to ensure that the smart contract receives the payment in ETH, regardless of which ERC20 token is used to make the payment</li>
+                <li>The smart contract will count the number of registered users, divide the total amount of ETH in the smart contract by the number of registered users, and update the Social Credits on each user's account on the Ethereum Blockchain. Devo will subscribe to changes and update the UI accordingly</li>
+                <li>The user can donate their Social Credits to a given service (typically an elected authority). When the user donates their Social Credits, an API call is sent to the smart contract, requesting that the Social Credits (still locked in the smart contract) are transferred to the public key of the service. Naturally, the smart contract will need to verify that the public key is associated with a valid service. As before, the number of social credits in the user's account will be updated accordingly</li>
+            </ul>
+        </div>
 
-        <ul>
-            <li>Each user will be required to create an account on Ethereum and pay small amount of ETH into a Smart Contract. The smart contract will create a user account which contains a number of additional fields. e.g. socialCredits, healthCredits, educationCredits, and a few others which I won't mention right now. </li>
-            <li>Voting will also be done on the Ethereum Blockchain. There are several <a href="https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2">voting tutorials</a></li>
-            <li>Any &ldquo;tax&rdquo; revenue (lottery, ads, LVT) that is paid into the application will be paid into the smart contract. We could use the Bancor protocol to ensure that the smart contract receives the payment in ETH, regardless of which ERC20 token is used to make the payment</li>
-            <li>The smart contract will count the number of registered users, divide the total amount of ETH in the smart contract by the number of registered users, and update the Social Credits on each user's account on the Ethereum Blockchain. Devo will subscribe to changes and update the UI accordingly</li>
-            <li>The user can donate their Social Credits to a given service (typically an elected authority). When the user donates their Social Credits, an API call is sent to the smart contract, requesting that the Social Credits (still locked in the smart contract) are transferred to the public key of the service. Naturally, the smart contract will need to verify that the public key is associated with a valid service. As before, the number of social credits in the user's account will be updated accordingly</li>
-        </ul>
+        <button class="accordion">Health Credits</button>
+        <div class="panel">
+            <h3>Summary</h3>
+            <ul>
+                <li>Social Credits are "sent back" to Smart Contract instructing it to swap them for Health Credits</li>
+                <li>The Smart Contract transfers the Social Credits to senders "healthCredits" field in the Blockchain</li>
+                <li>The Smart Contract will need access to a list of verified healthcare service providers</li>
+                <li>When health credits are spent, the contract will verify the provider, and sent them the ETH (from the funds locked in the contract)</li>
+                <li>The user's health credits will be updated in the Blockchain</li>
+            </ul>
 
-        <h2>Health Credits</h2>
+            <p>As mentioned, normally a user would donate their social credits to a service. When a user transfers their social credits to health credits, the social credits are &ldquo;sent back&rdquo; to the Smart Contract, and the contract updates the healthCredits field in the Blockchain. However, with health credits, there is a limit to the number of credits they can receive. I haven't yet decided how these limits would be set. Smart contracts are not typically able to access data from external sources. However, with <a href="http://provable.xyz/">Provable</a>, &ldquo;Smart contracts can directly access data from Web sites or APIs&rdquo;. This will enable us to dynamically adjust these limits through some form of democratic process. </p>
+            <p>In order for health credits to be redeemed we also need a list of healthcare service providers. This list will probably be done off the blockchain, although the service provider ratings will likely be stored on the blockchain. Service providers will need to register an account, just like ordinary users, and there will be a certain criteria that needs to be met in order for them to receive health credits. Education credits work in a very similar way so I'll omit this section for now. </p>
+        </div>
 
-        <h3>Summary</h3>
-        <ul>
-            <li>Social Credits are "sent back" to Smart Contract instructing it to swap them for Health Credits</li>
-            <li>The Smart Contract transfers the Social Credits to senders "healthCredits" field in the Blockchain</li>
-            <li>The Smart Contract will need access to a list of verified healthcare service providers</li>
-            <li>When health credits are spent, the contract will verify the provider, and sent them the ETH (from the funds locked in the contract)</li>
-            <li>The user's health credits will be updated in the Blockchain</li>
-        </ul>
+        <button class="accordion">Land Value Rent (LVR) – an unofficial Land Value Tax (LVT)</button>
+        <div class="panel">
+            <h3>Summary</h3>
+            <ul>
+                <li>Uses FieldCoin - blockchain based land marketplace</li>
+                <li>FieldCoin requires KYC (Know Your Customer) verification to puchase land</li>
+                <li>Users donate Social Credits to KYC verified "Land and Housing" public service</li>
+                <li>Devo will own the property titles recorded in the national land registry</li>
+                <li>The elected Land and Housing public service will develop the land (install housing modules etc)</li>
+                <li>For UK members, we can take advantage of the "Community Right to Build" scheme</li>
+                <li>Housing modules are built using aluminium profile technology</li>
+                <li>Land is rented out to community members via an auction</li>
+                <li>Users place a bid for how much they are willing to rent the land (and the housing modules)</li>
+                <li>An index will be used to track the value of FieldCoin's ERC20 token</li>
+                <li>LVR is dynamically adjusted according to the index</li>
+            </ul>
 
-        <p>As mentioned, normally a user would donate their social credits to a service. When a user transfers their social credits to health credits, the social credits are &ldquo;sent back&rdquo; to the Smart Contract, and the contract updates the healthCredits field in the Blockchain. However, with health credits, there is a limit to the number of credits they can receive. I haven't yet decided how these limits would be set. Smart contracts are not typically able to access data from external sources. However, with <a href="http://provable.xyz/">Provable</a>, &ldquo;Smart contracts can directly access data from Web sites or APIs&rdquo;. This will enable us to dynamically adjust these limits through some form of democratic process. </p>
-        <p>In order for health credits to be redeemed we also need a list of healthcare service providers. This list will probably be done off the blockchain, although the service provider ratings will likely be stored on the blockchain. Service providers will need to register an account, just like ordinary users, and there will be a certain criteria that needs to be met in order for them to receive health credits. Education credits work in a very similar way so I'll omit this section for now. </p>
+            <p>Let's assume that we have some revenue going into the application. We now have some Social Credits. We can use those credits to collectively buy land – perhaps using FieldCoin.</p>
+            <h2>What is FieldCoin? </h2>
 
-        <h2>Land Value Rent (LVR) – an unofficial Land Value Tax (LVT)</h2>
+            <p>FieldCoin Ltd is the “first blockchain based land marketplace”. I'm not sure how this applies to non-UK citizens but according to their <a target="_blank" href="https://www.fieldcoin.io/faq-fieldcoin.html">documentation</a>, they use the current legal framework combined with the blockchain to enable faster and cheaper transactions. There are 2 levels of ownership: </p>
+            <ul>
+                <li><b>Offchain</b> : to comply with national regulations</li>
+                <li><b>Onchain</b> : creates a unique ERC20 token representing a specific property</li>
+            </ul>
+            <p>Fieldcoin Ltd or a third party company DAO (decentralized autonomous organization) owns the property titles recorded in the national land registry. In this case, Devo would be the DAO. Once the land belongs to Devo, it becomes locked and cannot be re-sold – only rented. One or more users can register some or all of that land, and pay an LVR back into the application.</p>
 
-        <h3>Summary</h3>
-        <ul>
-            <li>Uses FieldCoin - blockchain based land marketplace</li>
-            <li>FieldCoin requires KYC (Know Your Customer) verification to puchase land</li>
-            <li>Users donate Social Credits to KYC verified "Land and Housing" public service</li>
-            <li>Devo will own the property titles recorded in the national land registry</li>
-            <li>The elected Land and Housing public service will develop the land (install housing modules etc)</li>
-            <li>For UK members, we can take advantage of the "Community Right to Build" scheme</li>
-            <li>Housing modules are built using aluminium profile technology</li>
-            <li>Land is rented out to community members via an auction</li>
-            <li>Users place a bid for how much they are willing to rent the land (and the housing modules)</li>
-            <li>An index will be used to track the value of FieldCoin's ERC20 token</li>
-            <li>LVR is dynamically adjusted according to the index</li>
-        </ul>
+            <h2>How much rent will they pay? </h2>
+            <p>This is where things get a bit fudgy. Let's look at house prices for example...</p>
+            <p>According to the following <a target="_blank" href="https://smartasset.com/mortgage/how-much-you-should-charge-for-rent">article</a>, “Typically, the rents that landlords charge fall between 0.8% and 1.1% of the home’s value”. For the sake of simplicity, let's call it 1%. Using this as an example, if we purchased a plot of land for £20,000, the renter would pay £200 per month. However, because there is no seller, we would be better off auctioning off the land to establish a more accurate (market driven) rental value. We could even charge a small amount to participate in the auction. There are already <a href="https://github.com/brynbellomy/solidity-auction">open-source auction dapps</a> we can use. </p>
 
-        <p>Let's assume that we have some revenue going into the application. We now have some Social Credits. We can use those credits to collectively buy land – perhaps using FieldCoin.</p>
+            <p>Now, I know what you are thinking. Charging a rent based on the intrinsic value of the undeveloped land is not profitable, and we certainly don't want to extort anyone, as that would defeat the object. Imagine the scenario above, where the renter pays 1% of the property's value each month. It will take 100 months (just over 8 years) until we are actually able to generate a revenue from it, which is not very helpful. As such, we will need to develop the land before conducting the auction, in the same way that an individual might renevate their house before renting it out. For more information about how we would develop the land, see the housing section. The rental value of the land would be separate from the rental value of the housing modules that we install on the land. Additionally, it would be a good idea to start off by accepting housing benefits. After all, you're already paying the tax to the Government, and in many situations that tax money goes to private landlords, which is a lousy deal. In this case, it goes back into the community. There's a lot more I could say on this issue, but if we are creative, we could find a number of ways to indirectly profit from the land, such as community centers, sports facilities, cinemas, games rooms etc.</p>
 
-        <h2>What is FieldCoin? </h2>
+            <p>We would therefore hold an auction within a specified date range, and users will put in a bid for how much they are willing to rent the land (and the housing modules) for. We could also setup an index (or tracker) that tracks the value of FieldCoin's ERC20 token (called LANDS). If the value goes up by X%, the LVR goes up by X%, and vice-versa. Sure, this will happen anyway due to market forces, but then we would need to start an auction each time the renter decides to move on.</p>
 
-        <p>FieldCoin Ltd is the “first blockchain based land marketplace”. I'm not sure how this applies to non-UK citizens but according to their <a target="_blank" href="https://www.fieldcoin.io/faq-fieldcoin.html">documentation</a>, they use the current legal framework combined with the blockchain to enable faster and cheaper transactions. There are 2 levels of ownership: </p>
-        <ul>
-            <li><b>Offchain</b> : to comply with national regulations</li>
-            <li><b>Onchain</b> : creates a unique ERC20 token representing a specific property</li>
-        </ul>
-        <p>Fieldcoin Ltd or a third party company DAO (decentralized autonomous organization) owns the property titles recorded in the national land registry. In this case, Devo would be the DAO. Once the land belongs to Devo, it becomes locked and cannot be re-sold – only rented. One or more users can register some or all of that land, and pay an LVR back into the application.</p>
+            <h2>What about planning permission?</h2>
+            <p>Obviously if you are not based in the UK, the rules will be different. Here in the UK it is notoriously difficult to get planning permission. However, we have a lesser known scheme called <a href="https://mycommunity.org.uk/resources/understanding-the-community-right-to-build/" target="_blank">Community Right to Build</a>. According to the website: “This Act was conceived to fulfil the Government’s stated commitment to decentralising control over public services, assets and planning from central government to local government and from local government to local communities. These give communities explicit powers in the areas of local assets, local services, planning and development”.</p>
+            <p>One of the main advantages of collectively buying land is that even in the event that we are not allowed to use the land for our intended purpose, a) the risk is shared, and b) we can probably still find a use for it that will benefit the community.</p>
+        </div>
 
-        <h2>How much rent will they pay? </h2>
-        <p>This is where things get a bit fudgy. Let's look at house prices for example...</p>
-        <p>According to the following <a target="_blank" href="https://smartasset.com/mortgage/how-much-you-should-charge-for-rent">article</a>, “Typically, the rents that landlords charge fall between 0.8% and 1.1% of the home’s value”. For the sake of simplicity, let's call it 1%. Using this as an example, if we purchased a plot of land for £20,000, the renter would pay £200 per month. However, because there is no seller, we would be better off auctioning off the land to establish a more accurate (market driven) rental value. We could even charge a small amount to participate in the auction. There are already <a href="https://github.com/brynbellomy/solidity-auction">open-source auction dapps</a> we can use. </p>
+        <button class="accordion">Housing</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
 
-        <p>Now, I know what you are thinking. Charging a rent based on the intrinsic value of the undeveloped land is not profitable, and we certainly don't want to extort anyone, as that would defeat the object. Imagine the scenario above, where the renter pays 1% of the property's value each month. It will take 100 months (just over 8 years) until we are actually able to generate a revenue from it, which is not very helpful. As such, we will need to develop the land before conducting the auction, in the same way that an individual might renevate their house before renting it out. For more information about how we would develop the land, see the housing section. The rental value of the land would be separate from the rental value of the housing modules that we install on the land. Additionally, it would be a good idea to start off by accepting housing benefits. After all, you're already paying the tax to the Government, and in many situations that tax money goes to private landlords, which is a lousy deal. In this case, it goes back into the community. There's a lot more I could say on this issue, but if we are creative, we could find a number of ways to indirectly profit from the land, such as community centers, sports facilities, cinemas, games rooms etc.</p>
-
-        <p>We would therefore hold an auction within a specified date range, and users will put in a bid for how much they are willing to rent the land (and the housing modules) for. We could also setup an index (or tracker) that tracks the value of FieldCoin's ERC20 token (called LANDS). If the value goes up by X%, the LVR goes up by X%, and vice-versa. Sure, this will happen anyway due to market forces, but then we would need to start an auction each time the renter decides to move on.</p>
-
-        <h2>What about planning permission?</h2>
-        <p>Obviously if you are not based in the UK, the rules will be different. Here in the UK it is notoriously difficult to get planning permission. However, we have a lesser known scheme called <a href="https://mycommunity.org.uk/resources/understanding-the-community-right-to-build/" target="_blank">Community Right to Build</a>. According to the website: “This Act was conceived to fulfil the Government’s stated commitment to decentralising control over public services, assets and planning from central government to local government and from local government to local communities. These give communities explicit powers in the areas of local assets, local services, planning and development”.</p>
-        <p>One of the main advantages of collectively buying land is that even in the event that we are not allowed to use the land for our intended purpose, a) the risk is shared, and b) we can probably still find a use for it that will benefit the community.</p>
 
         <p>TO BE CONTINUED...</p>
     </section>

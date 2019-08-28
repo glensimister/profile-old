@@ -58,12 +58,51 @@ small {
     -moz-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
     box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
 }
-
 pre {
     margin: 20px 0;
-    background:  #eee;
+    background: #eee;
     border-radius: 4px;
     padding: 0 20px;
+}
+#main .accordion {
+    -webkit-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
+    -moz-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
+    box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    font-size: 14px;
+    font-family: 'OpenSans-Regular', sans-serif;
+    font-weight: 400;
+    color: #222d32;
+}
+#main .active,
+#main .accordion:hover {
+    background-color: #e2dfdf;
+}
+#main .panel {
+    /*padding: 20px 0;*/
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+#main button.accordion {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+#main button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    font-size: 18px;
 }
 
 /*
