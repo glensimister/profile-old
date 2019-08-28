@@ -69,7 +69,8 @@ pre {
     -moz-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
     box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
     cursor: pointer;
-    padding: 20px;
+    padding: 5px 10px;
+    text-transform: uppercase;
     width: 100%;
     border: none;
     text-align: left;

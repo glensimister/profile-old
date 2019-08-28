@@ -9,6 +9,10 @@
     display: grid;
     grid-gap: 20px;
 }
+
+.grid-2-col img {
+    width:100%;
+}
 .grid-3-col,
 .grid-4-col {
     display: grid;
