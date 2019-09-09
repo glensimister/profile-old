@@ -66,8 +66,8 @@
                 <li>Passwords will be generated using security questions, which the user can specify</li>
                 <li>Passwords will not be visible to the host</li>
             </ul>
-
-            <p><img src="/img/profile.PNG" style="width:100%" /></p>
+            
+            <p>NOTE: The public profile will look similar to this site.</p>
 
             <p>Initially, the public profile will be built on <a href="https://gun.eco/">GunDB</a>. GunDB is a lightweight, P2P graph database engine written in Javascript. GunDB works both in the browser (using localstorage) or on a server (using NodeJS). The public profile itself will be hosted on a server, while Dvo will use localstorage. Of course, in order for the platform to be fully decentralized, we would need some sort of decentralized storage platform that is able to host dynamic web applications. There are decentralized storage solutions, such as IPFS, however, to the best of my knowledge, IPFS can only host static content. Additionally, with IPFS it's not possible to delete data. I want to ensure that users have as much control over their data as possible, which includes the right to remove content as and when they choose. With GunDB you at least have the option to overwrite your data with NULL, which is good enough for me.</p>
             <p>With this in mind, we will need to rely on free hosting providers (for now at least), which is not an ideal solution, but a trade off. The public profile is &ldquo;semi-centralized&rdquo; because it will be hosted on a &ldquo;centralized server&rdquo;, but users can choose which server they want to host it. It thus follows a similar principal to <a href="https://solid.inrupt.com/">Solid (Social Linked Data)</a> - a project that is being developed by Tim Berners-Lee. There may be ways of automating the transfer of profiles between servers. Naturally, there are those who want less censorship, and those who want more. Storing the profiles on a centralized server provides a compromise. For example, if a user of the application is hosting illicit material, other users could report them to the hosting provider, or even report the hosting provider to the authorities. However, assuming the user hosting the data doesn't end up in jail, they could simply move their data to another server, and update their URL within Dvo. In some ways I would prefer this option as it's more democratic. Not only that but I wouldn't want to derail the project by getting into trouble with the authorities.</p>
@@ -83,7 +83,7 @@
                 <li>Dvo doesn't store users' data, but refereces to the data on the server hosting the profile</li>
             </ul>
 
-            <p><img src="/img/socialmedia.PNG" style="width:100%" /></p>
+            <p><img src="img/socialmedia.PNG" style="width:100%" /></p>
 
             <p>Dvo (short for "Devolution") is decentralized, as it works without a centralized server. Ideally, I would like users to be able to login to Dvo using the same credentials as the public profile, which will enable them to write, edit and delete data on their profile. <a href="https://glensimister.github.io/devolution" target=_blank >Here</a> is a link to the demo.</p>
             <p>GunDB will not store a user's posts/comments/photos etc. Instead it stores a reference to this data on the user's public profile. GunDB uses localstorage for storing the data, which is limited in size. That said, users only store the data that they are a subscribed too, and there are adapters that can increase the size of the storage. However, given that Facebook stores about 500+ terabytes of data each day, we still need to preserve as much space as possible. So... </p>
@@ -104,13 +104,13 @@
 /*** users ****/
 publicKey: the URL of the users profile, which can updated if they move their profile
         </code></pre>
-            <p>When the original poster tries to retrieve the post it will lookup the public key in the users table, find the URL of their profile, and then fetch the post according to the ID. Likewise, it will lookup the comments, find the URL of the commenter's public key and fetch the post according to the post ID. The goal is to only store the data you absolutely must store. There will be some data that may be best stored in Gun. For example, a private chat between two people might be better stored in Gun as sending a POST request to a server each time you send a message would be inefficient. </p>
+            <p>When the original poster tries to retrieve the post it will lookup the public key in the users table, find the URL of their profile, and then fetch the post according to the ID. Likewise, it will lookup the comments, find the URL of the commenter's public key and fetch the post according to the post ID. The goal is to only store the data you absolutely must store. There will be some data that may be best stored in Gun. For example, a private chat between two people might be better stored in Gun as sending a POST request to a server each time you send a message would be inefficient.</p>
         </div>
 
         <button class="accordion">Browser extension</button>
         <div class="panel">
-            <p><img src="/img/chromeExt.PNG" style="width:100%" /></p>
-            <p>The browser extension is a toolbar that allows Dvo to be used beyond the confines of the application. I'm trying to avoid "vendor lock-in" as much as possible. <a href="https://glensimister.github.io/devo/" target=_blank >Here</a> is a link to the demo.</p>
+            <p><img src="img/chromeExt.PNG" style="width:100%" /></p>
+            <p>The browser extension is a toolbar that allows Dvo to be used beyond the confines of the application. I'm trying to avoid "vendor lock-in" as much as possible. The extension allows people to like/dislike/flag/comment on anything, anywhere. <a href="https://glensimister.github.io/devo/" target=_blank >Here</a> is a link to the demo.</p>
         </div>
 
         <button class="accordion">Social Credits and financial transactions</button>
