@@ -160,9 +160,9 @@ side-menu {
     text-align: left;
 }
 .left {
-    background: #222d32;
-    min-height: 600px;
+    border-right: 1px solid #eee;
     padding: 20px 0;
+    box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
 }
 .user-image-large {
     width: 128px;

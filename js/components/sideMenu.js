@@ -19,15 +19,17 @@ color:#dd4b39;
 
 side-menu p {
 padding:0 20px;
-color:#b1b0b0;
 }
 
 .sidebar-header {
-    background-color: #3f4d54;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    -webkit-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
+    -moz-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
+    box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
     text-transform:uppercase;
     font-size: 13px;
     text-align: center;
-    color: #c5c5c5;
     margin:20px 0;
     padding:10px;
 }
@@ -36,14 +38,12 @@ side-menu {
 font-size: 13px;
 }
 
-@media screen and (min-width: 600px) {}
 side-menu ul li {
-    border-bottom: 1px solid #334046;
+    border-bottom: 1px solid #eee;
     line-height: 30px;
     padding: 0 15px;
     display: block;
     text-decoration: none;
-    color: #fff;
 }
 </style>
 
