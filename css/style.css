@@ -170,6 +170,7 @@ top-nav .active {
     -webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
     -moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
     box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
+    /* background: #222d32; */
 }
 top-nav a:hover {
     color: #dd4b39;
@@ -182,6 +183,7 @@ top-nav a {
     line-height: 27px;
     font-size: 12px;
     padding: 10px 5px;
+    border: 1px solid #222d32;
 }
 .top-nav-login {
     width: 100%;
@@ -193,6 +195,7 @@ top-nav a {
     display: none;
 }
 .logo {
+    /* border-right: 1px solid #2c3a40; */
     background: #1c2529;
 }
 .logo a {
