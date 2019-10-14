@@ -244,7 +244,6 @@ side-menu ul li {
     text-decoration: none;
 }
 .left {
-    padding: 20px 0;
     background: #222d32;
     color: #848484;
 }
@@ -317,6 +316,23 @@ top-menu,
     -webkit-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
     -moz-box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
     box-shadow: inset 0px 0px 33px -1px rgba(238, 238, 238, 0.47);
+}
+
+x-star-rating {
+    font-size: 24px;
+    width: 87px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    cursor: pointer;
+}
+x-star-rating > .star::after {
+    content: '\2605';
+    color: #848484;
+}
+x-star-rating > .star.full::after {
+    content: '\2605';
+    color: #e08e0b;
 }
 
 /*#tabs > label span {
