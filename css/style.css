@@ -221,7 +221,7 @@ side-menu {
     border-bottom: 1px solid #eee;
     padding: 0;
 }
-side-menu i {
+side-menu ul i {
     width: 20px;
     color: #dd4b39;
 }
