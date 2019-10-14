@@ -2,9 +2,9 @@ class TopNav extends HTMLElement {
     async connectedCallback() {
         this.innerHTML = `
 <div><a href="">HOME</a></div>
-                <div><a class="hiddenItem" href="#/activity">ACTIVITY</a></div>
-                <div><a class="hiddenItem" href="#/photos">PHOTOS</a></div>
-                <div><a class="hiddenItem" href="#/friends">FRIENDS</a></div>
+                <div><a href="#/photos">PHOTOS</a></div>
+                <div><a href="#/friends">FRIENDS</a></div>
+<div><a class="hiddenItem" href="#/activity">ACTIVITY</a></div>
 <div><a class="top-nav-login">LOGIN</a></div>
 
     <div id="login">

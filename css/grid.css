@@ -1,17 +1,12 @@
-/*.grid > div {
-    padding: 10px;
-}*/
-.grid-home-page {
-    display: grid;
-    grid-gap: 10px;
+.grid-top {
+    background: #1c2529;
 }
 .grid-2-col {
     display: grid;
     grid-gap: 20px;
 }
-
 .grid-2-col img {
-    width:100%;
+    width: 100%;
 }
 .grid-3-col,
 .grid-4-col {

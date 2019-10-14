@@ -161,14 +161,12 @@ textarea.form-control {
 /* need to make side manu in shadow root */
 
 top-nav {
-    background: #222d32;
     display: grid;
     text-align: center;
     grid-template-columns: repeat(5, 1fr);
 }
 top-nav .active {
     color: #dd4b39;
-    background: #1c2529;
     -webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
     -moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
     box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
