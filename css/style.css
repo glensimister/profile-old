@@ -105,7 +105,6 @@ pre {
     margin-left: 5px;
     font-size: 18px;
 }
-
 #main button.accordion.active:after {
     content: "\2212";
 }
@@ -163,10 +162,10 @@ top-nav {
     grid-template-columns: repeat(5, 1fr);
 }
 top-nav .active {
-    font-weight:bold;
+    font-weight: bold;
 }
 top-nav > div {
-padding: 10px;
+    padding: 10px;
 }
 top-nav a {
     cursor: pointer;
@@ -175,16 +174,14 @@ top-nav a {
     line-height: 27px;
     font-size: 12px;
 }
-
-.hiddenItem{
-display:none;
+.hiddenItem {
+    display: none;
 }
 #login {
-display:none;
+    display: none;
 }
-
 .logo {
-background: #1c2529;
+    background: #1c2529;
 }
 .logo a {
     text-align: center;
@@ -193,56 +190,47 @@ background: #1c2529;
     text-transform: uppercase;
     display: block;
     font-size: 18px;
-    padding:10px;
+    padding: 10px;
 }
 .logo b {
-color:#00acd6;
+    color: #00acd6;
 }
 .logo span {
     color: #fff;
 }
-
 side-menu {
     text-align: left;
 }
-
 .grid > side-menu {
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
     padding: 0;
 }
-
 side-menu i {
-width:20px; 
-color:#dd4b39;
+    width: 20px;
+    color: #dd4b39;
 }
-
 side-menu p {
-padding:0 20px;
+    padding: 20px;
+    border-top: 2px solid #1c2529;
 }
-
 .sidebar-header {
     background: #1c2529;
-    text-transform:uppercase;
+    text-transform: uppercase;
     font-size: 13px;
     text-align: center;
-    margin:20px 0;
-    padding:10px;
+    margin: 20px 0;
+    padding: 10px;
 }
-
 side-menu {
-font-size: 13px;
+    font-size: 13px;
 }
-
 side-menu ul li {
-    border-bottom: 1px solid #848484;
     line-height: 30px;
     padding: 0 15px;
     display: block;
     text-decoration: none;
 }
-
-
 .left {
     padding: 20px 0;
     background: #222d32;
