@@ -5,9 +5,7 @@ class TopNav extends HTMLElement {
                 <div><a class="hiddenItem" href="#/activity">ACTIVITY</a></div>
                 <div><a class="hiddenItem" href="#/photos">PHOTOS</a></div>
                 <div><a class="hiddenItem" href="#/friends">FRIENDS</a></div>
-                <div>
-                    <button class="top-nav-login btn btn-red">LOGIN</button>
-                </div>
+<div><a class="top-nav-login">LOGIN</a></div>
 
     <div id="login">
         <h4 style="text-align: center">LOGIN</h4>

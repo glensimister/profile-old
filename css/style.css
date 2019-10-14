@@ -162,23 +162,23 @@ top-nav {
     grid-template-columns: repeat(5, 1fr);
 }
 top-nav .active {
-    font-weight: bold;
+    color: #dd4b39;
+    background: #1c2529;
+    -webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
+    box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
 }
-top-nav > div {
-    padding: 10px;
+top-nav a:hover {
+    color: #dd4b39;
 }
 top-nav a {
     cursor: pointer;
     color: #848484;
     background: #1c2529;
-    border-radius: 20px;
     display: block;
     line-height: 27px;
     font-size: 12px;
-    padding: 0 10px;
-    -webkit-box-shadow: inset -2px 3px 5px 0px rgba(0, 0, 0, 0.49);
-    -moz-box-shadow: inset -2px 3px 5px 0px rgba(0, 0, 0, 0.49);
-    box-shadow: inset -2px 3px 5px 0px rgba(0, 0, 0, 0.49);
+    padding: 10px 5px;
 }
 .top-nav-login {
     width: 100%;
@@ -230,9 +230,9 @@ side-menu p {
     text-align: center;
     margin: 20px 0;
     padding: 10px;
-    -webkit-box-shadow: inset -2px 3px 5px 0px rgba(0, 0, 0, 0.49);
-    -moz-box-shadow: inset -2px 3px 5px 0px rgba(0, 0, 0, 0.49);
-    box-shadow: inset -2px 3px 5px 0px rgba(0, 0, 0, 0.49);
+    -webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
+    box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.57);
 }
 side-menu {
     font-size: 13px;
