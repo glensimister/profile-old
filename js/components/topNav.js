@@ -23,7 +23,6 @@ class TopNav extends HTMLElement {
         <button class="btn btn-blue register">REGISTER</button>
         <button class="btn btn-green clear">CLEAR</button>
     </div>
-
 `;
 
         var gun = Gun();
@@ -39,12 +38,12 @@ class TopNav extends HTMLElement {
         /* check to see if user is logged in on page load */
         if (sessionStorage.getItem('alias') != null) {
             $('.hiddenItem').show();
-            $('.hiddenItem').parent().css("border-right", "1px solid #eee");
+            //$('.hiddenItem').parent().css("border-right", "1px solid #eee");
             $('.top-nav-login').html("LOGOUT");
             $('.top-nav-login').addClass("loggedIn");
         } else {
             $('.hiddenItem').hide();
-            $('.hiddenItem').parent().css("border-right", "none");
+            //$('.hiddenItem').parent().css("border-right", "none");
             $('.top-nav-login').html("LOGIN");
             $('.top-nav-login').removeClass("loggedIn");
         }
@@ -62,7 +61,7 @@ class TopNav extends HTMLElement {
                 $('.top-nav-login').html("LOGIN");
                 $('.top-nav-login').removeClass("loggedIn");
                 $('.hiddenItem').hide();
-                $('.hiddenItem').parent().css("border-right", "none");
+                //$('.hiddenItem').parent().css("border-right", "none");
             }
         });
 
@@ -71,7 +70,7 @@ class TopNav extends HTMLElement {
             user.auth($('.username').val(), $('.password').val(), function (res) {
                 if (!res.err) {
                     $('.hiddenItem').show();
-                    $('.hiddenItem').parent().css("border-right", "1px solid #eee");
+                    //$('.hiddenItem').parent().css("border-right", "1px solid #eee");
                     $('.top-nav-login').addClass("loggedIn");
                     $('.top-nav-login').html("LOGOUT");
                     $('#login').dialog('close');
