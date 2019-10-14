@@ -37,13 +37,11 @@ class TopNav extends HTMLElement {
 
         /* check to see if user is logged in on page load */
         if (sessionStorage.getItem('alias') != null) {
-            $('.hiddenItem').show();
-            //$('.hiddenItem').parent().css("border-right", "1px solid #eee");
+            $('.hiddenItem').css('display', 'block');
             $('.top-nav-login').html("LOGOUT");
             $('.top-nav-login').addClass("loggedIn");
         } else {
             $('.hiddenItem').hide();
-            //$('.hiddenItem').parent().css("border-right", "none");
             $('.top-nav-login').html("LOGIN");
             $('.top-nav-login').removeClass("loggedIn");
         }
@@ -61,7 +59,6 @@ class TopNav extends HTMLElement {
                 $('.top-nav-login').html("LOGIN");
                 $('.top-nav-login').removeClass("loggedIn");
                 $('.hiddenItem').hide();
-                //$('.hiddenItem').parent().css("border-right", "none");
             }
         });
 
@@ -69,8 +66,7 @@ class TopNav extends HTMLElement {
         $('.login').on('click', function () {
             user.auth($('.username').val(), $('.password').val(), function (res) {
                 if (!res.err) {
-                    $('.hiddenItem').show();
-                    //$('.hiddenItem').parent().css("border-right", "1px solid #eee");
+                    $('.hiddenItem').css('display', 'block');
                     $('.top-nav-login').addClass("loggedIn");
                     $('.top-nav-login').html("LOGOUT");
                     $('#login').dialog('close');
