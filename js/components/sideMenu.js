@@ -10,8 +10,7 @@ class SideMenu extends HTMLElement {
                     <li><i class="fa fa-at"></i> <span>${res.email}</span></li>
                     <li><i class="fa fa-phone"></i> <span>${res.phone}</span></li>
                     <li><i class="fa fa-external-link"></i> <span>${res.website}</span></li>
-                </ul><br />
-                    <p>I currently work for a company called Lepide.com where I write articles about data security. In the limited spare time that I have I mess around with open-source projects, such as the one featured on this site.</p>`;
+                </ul><div class="add-friend"><button class="btn btn-red" style="display:block; margin:auto;"><i class="fa fa-plus" style="color:#fff; text-align:left"></i> ADD FRIEND</button></div>`;
     }
 }
 
