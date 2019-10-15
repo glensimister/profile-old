@@ -331,7 +331,9 @@ top-menu,
 
 x-star-rating {
     font-size: 24px;
-    width: 87px;
+    width: 40%;
+    text-align: center;
+    margin: auto;
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
