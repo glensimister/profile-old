@@ -11,19 +11,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/buttons.css">
-
-    <!-- this needs to go in vendor -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/vendor/select2.min.css">
-    <link rel="stylesheet" href="css/vendor/animate.css">
-    <link rel="stylesheet" href="css/vendor/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
 </head>
 
 <body>
     <div id="container">
         <div class="grid-top">
             <div class="logo">
-                <user-name></user-name>
+                <a href="#/"><b>Glen</b> Simister</a>
             </div>
             <top-nav></top-nav>
         </div>
@@ -31,7 +27,17 @@
             <div class="left">
                 <x-star-rating value="3" number="5"></x-star-rating>
                 <img src="img/profilepic.jpg" class="user-image-large" />
-                <side-menu></side-menu>
+                <div id="sidebar">
+                    <div class="sidebar-header">DESIGNER / DEVELOPER / WRITER</div>
+                    <ul id="details">
+                        <li><i class="fa fa-at"></i> <span>glen_simister@yahoo.co.uk</span></li>
+                        <li><i class="fa fa-phone"></i> <span>(+44) 07561179745</span></li>
+                        <li><i class="fa fa-external-link"></i> <span>dvo.org</span></li>
+                    </ul>
+                </div>
+                <div class="add-friend">
+                    <button class="btn btn-red" style="display:block; margin:auto;"><i class="fa fa-user-plus" style="margin-right:5px;"></i>ADD FRIEND</button>
+                </div>
             </div>
             <div id="main">
                 <h1 class="page-title"></h1>
@@ -44,12 +50,10 @@
     <!---------- Vendor -------------->
     <script src="js/vendor/jquery-3.3.1.js"></script>
     <script src="js/vendor/sammy-latest.min.js"></script>
-    <script src="js/vendor/select2.full.min.js"></script>
     <script src="js/vendor/jquery-ui.js"></script>
 
 
     <!---------- Global  -------------->
-    <script src="js/routing.js"></script>
     <script src="js/index.js"></script>
 
 
@@ -60,8 +64,6 @@
 
     <!-------------------------------- Global Web components ---------------------------------->
 
-    <script type="module" src="js/components/sideMenu.js"></script>
-    <script type="module" src="js/components/userName.js"></script>
     <script type="module" src="js/components/editAndDelete.js"></script>
     <script type="module" src="js/components/topNav.js"></script>
     <script type="module" src="js/components/StarRating.js"></script>
